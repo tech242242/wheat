@@ -5,7 +5,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 0 2rem;
+  padding-top: 80px; /* Added padding to prevent navbar overlap */
 }
 
 .hero-background {
@@ -27,16 +27,21 @@
   background-size: 150px 150px;
 }
 
-.hero-content {
+.container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.hero-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
-  width: 100%;
   position: relative;
   z-index: 2;
+  padding: 2rem 0; /* Added padding for better spacing */
 }
 
 .hero-text {
@@ -47,7 +52,7 @@
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem; /* Increased margin */
   background: rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
   border-radius: 20px;
@@ -88,7 +93,7 @@
 
 .hero-description {
   font-size: 1.3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem; /* Increased margin */
   opacity: 0.95;
   line-height: 1.6;
 }
@@ -97,7 +102,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem; /* Increased margin */
 }
 
 .feature-item {
@@ -116,6 +121,7 @@
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
+  margin-top: 2rem; /* Added top margin */
 }
 
 .cta-button {
@@ -161,6 +167,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem 0; /* Added padding */
 }
 
 .straw-bale {
@@ -172,6 +179,7 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   border: 3px solid #D2B48C;
   min-width: 280px;
+  margin-top: 1rem; /* Added margin */
 }
 
 .bale-top {
@@ -233,6 +241,7 @@
     grid-template-columns: 1fr;
     gap: 3rem;
     text-align: center;
+    padding: 3rem 0; /* Increased padding */
   }
   
   .hero h1 {
@@ -242,38 +251,61 @@
   .hero-description {
     font-size: 1.1rem;
   }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
   .hero {
-    padding: 0 1rem;
+    padding-top: 70px; /* Adjusted for mobile */
+    min-height: 90vh; /* Slightly reduced height for mobile */
   }
   
   .hero h1 {
     font-size: 2.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
   }
   
   .hero-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
   
   .cta-button {
     width: 100%;
     max-width: 300px;
+    padding: 1rem 2rem;
   }
   
   .logo-badge {
     padding: 1rem;
+    margin-bottom: 2rem;
   }
   
   .shield {
     width: 50px;
     height: 60px;
   }
+  
+  .hero-features {
+    margin-bottom: 2rem;
+  }
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding-top: 60px;
+    min-height: 85vh;
+  }
+  
   .hero h1 {
     font-size: 2rem;
   }
@@ -284,5 +316,14 @@
   
   .feature-item {
     font-size: 1rem;
+  }
+  
+  .straw-bale {
+    padding: 2rem 1.5rem;
+    min-width: 250px;
+  }
+  
+  .container {
+    padding: 0 15px;
   }
 }
