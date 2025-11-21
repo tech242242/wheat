@@ -1,84 +1,54 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Hero.css'
 
 const Hero = () => {
-  const [currentFeature, setCurrentFeature] = useState(0)
-
-  const features = [
-    "Modern Design",
-    "Fast Performance",
-    "Secure Platform",
-    "User Friendly"
-  ]
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentFeature((prev) => (prev + 1) % features.length)
-    }, 2000)
-    return () => clearInterval(interval)
+    setIsVisible(true)
   }, [])
 
   return (
-    <section className="hero">
-      <div className="hero-container">
-        <div className="hero-content">
-          <div className="hero-badge">
-            <span>✨ Ultra Modern Design</span>
+    <section id="home" className="hero">
+      <div className="hero-background">
+        <div className="wheat-pattern"></div>
+      </div>
+      <div className="hero-content">
+        <div className={`hero-text ${isVisible ? 'fade-in-up' : ''}`}>
+          <div className="logo-badge">
+            <div className="shield"></div>
+            <div className="wheat-stalks">🌾🌾</div>
+            <div className="ribbon">Prime Crop Straw</div>
           </div>
-          
-          <h1 className="hero-title">
-            Experience The
-            <span className="gradient-text"> Future</span>
-            <br />
-            Of Web Design
-          </h1>
-          
+          <h1>Premium Wheat Straw Bales Supplier</h1>
           <p className="hero-description">
-            Discover the next generation of web experiences with our cutting-edge 
-            glass morphism design, smooth iOS animations, and blazing fast performance.
+            High-quality, clean, and sun-dried wheat straw bales for farms, industries, and exporters. 
+            We specialize in delivering consistency, purity, and reliable supply to our customers worldwide.
           </p>
-
           <div className="hero-features">
-            <div className="feature-display">
-              {features.map((feature, index) => (
-                <span
-                  key={index}
-                  className={`feature-text ${
-                    index === currentFeature ? 'active' : ''
-                  }`}
-                >
-                  {feature}
-                </span>
-              ))}
+            <div className="feature-item">
+              <span className="feature-icon">✅</span>
+              <span>Clean & Dust-Controlled</span>
+            </div>
+            <div className="feature-item">
+              <span className="feature-icon">✅</span>
+              <span>Sun-Dried & Tightly-Packed</span>
+            </div>
+            <div className="feature-item">
+              <span className="feature-icon">✅</span>
+              <span>Uniform Bale Size</span>
             </div>
           </div>
-
-          <div className="hero-actions">
-            <button className="cta-button primary">
-              Get Started Free
-            </button>
-            <button className="cta-button secondary">
-              View Demo
-            </button>
+          <div className="hero-buttons">
+            <a href="#products" className="cta-button primary">View Our Products</a>
+            <a href="#contact" className="cta-button secondary">Get In Touch</a>
           </div>
         </div>
-
-        <div className="hero-visual">
-          <div className="glass-card main-card">
-            <div className="card-content">
-              <div className="card-header">
-                <div className="card-dots">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-              <div className="card-body">
-                <div className="floating-element el1"></div>
-                <div className="floating-element el2"></div>
-                <div className="floating-element el3"></div>
-              </div>
-            </div>
+        <div className={`hero-visual ${isVisible ? 'fade-in-right' : ''}`}>
+          <div className="straw-bale">
+            <div className="bale-top">🌾</div>
+            <div className="bale-middle">Premium Wheat Straw</div>
+            <div className="bale-bottom">Prime Quality</div>
           </div>
         </div>
       </div>
