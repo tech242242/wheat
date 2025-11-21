@@ -6,6 +6,7 @@ import Products from './components/Products'
 import WhyChoose from './components/WhyChoose'
 import Industries from './components/Industries'
 import Process from './components/Process'
+import Contact from './components/Contact'
 import Footer from './components/Footer'
 import './App.css'
 
@@ -19,6 +20,7 @@ function App() {
       <WhyChoose />
       <Industries />
       <Process />
+      <Contact />
       <Footer />
     </div>
   )
