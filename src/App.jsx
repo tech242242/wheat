@@ -1,6 +1,5 @@
 import React from 'react'
 import ParticleBackground from './components/ParticleBackground'
-import AnimatedCursor from './components/AnimatedCursor'
 import ScrollProgress from './components/ScrollProgress'
 import LoadingAnimation from './components/LoadingAnimation'
 import Header from './components/Header'
@@ -24,7 +23,6 @@ function App() {
   return (
     <div className="app">
       <ParticleBackground />
-      <AnimatedCursor />
       <ScrollProgress />
       <LoadingAnimation />
       <Header />
