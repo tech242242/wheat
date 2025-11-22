@@ -4,6 +4,8 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
 import StatsCounter from './components/StatsCounter'
+import ProductShowcase from './components/ProductShowcase'
+import InteractiveBale from './components/InteractiveBale'
 import Products from './components/Products'
 import WhyChoose from './components/WhyChoose'
 import Industries from './components/Industries'
@@ -21,6 +23,8 @@ function App() {
       <Hero />
       <About />
       <StatsCounter />
+      <ProductShowcase />
+      <InteractiveBale />
       <Products />
       <WhyChoose />
       <Industries />
