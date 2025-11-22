@@ -18,8 +18,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import FloatingActionButton from './components/FloatingActionButton'
 import AIChatAssistant from './components/AIChatAssistant'
-import VoiceSearch from './components/VoiceSearch'
-import MarketData from './components/MarketData'
+
 import './App.css'
 
 function App() {
@@ -44,8 +43,6 @@ function App() {
       <Footer />
       <FloatingActionButton />
       <AIChatAssistant />
-      <VoiceSearch />
-      <MarketData />
     </div>
   )
 }
