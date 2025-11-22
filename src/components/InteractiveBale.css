@@ -1,0 +1,193 @@
+.interactive-bale-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #2d5016 0%, #1a3310 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.interactive-bale-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10 L55 25 L70 25 L58 35 L63 50 L50 40 L37 50 L42 35 L30 25 L45 25 Z' fill='%23ffffff' fill-opacity='0.03'/%3E%3C/svg%3E");
+  background-size: 120px 120px;
+}
+
+.bale-viewer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.canvas-wrapper {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: grab;
+  transition: all 0.3s ease;
+}
+
+.canvas-wrapper:active {
+  cursor: grabbing;
+}
+
+.canvas-wrapper:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+}
+
+.bale-canvas {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.viewer-overlay {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.instruction {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  backdrop-filter: blur(10px);
+  display: inline-block;
+}
+
+.bale-info {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bale-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.specs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.spec {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.spec-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.spec-value {
+  color: #ffd700;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.quality-badges {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.badge:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(10px);
+}
+
+.badge-icon {
+  font-size: 1.2rem;
+  background: rgba(255, 215, 0, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 968px) {
+  .bale-viewer {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .canvas-wrapper {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .interactive-bale-section {
+    padding: 80px 0;
+  }
+  
+  .bale-canvas {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+  
+  .bale-info {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .canvas-wrapper {
+    padding: 1.5rem;
+  }
+  
+  .bale-info {
+    padding: 1.5rem;
+  }
+  
+  .spec {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
